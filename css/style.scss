@@ -42,6 +42,11 @@ body{background-color: var(--background-night);
     transition: 0.5s;
 padding: 0;
 font-family: helvetica;
+
+
+section{
+    overflow: hidden;
+}
 p{font-size: var(--fontp);}
     
     #container-header{
