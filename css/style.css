@@ -5,6 +5,10 @@
   scroll-behavior: smooth;
 }
 
+html {
+  overflow-x: hidden;
+}
+
 :root {
   --fontAncora: 1.3rem;
   --fonth1:4rem;
@@ -29,7 +33,6 @@ body {
   display: flex;
   color: var(--color-text-night);
   transition: 0.5s;
-  overflow-x: hidden;
   padding: 0;
   font-family: helvetica;
 }
@@ -240,7 +243,6 @@ header #contatos i:hover {
 }
 
 main {
-  width: 102vw;
   display: flex;
   flex-direction: column;
 }
@@ -604,8 +606,8 @@ main #ferramentas #container-ferramentas .ferramenta i {
     position: fixed !important;
     display: flex !important;
     transition: 0.5s;
-    height: 100dvh !important;
-    width: 100vw !important;
+    height: 100% !important;
+    width: 100% !important;
   }
   #home {
     height: 120dvh !important;

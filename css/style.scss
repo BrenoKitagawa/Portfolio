@@ -5,6 +5,8 @@ margin: 0;
 box-sizing: border-box;
 scroll-behavior: smooth;}
 
+html{overflow-x: hidden;}
+
 
 :root{
     --fontAncora: 1.3rem;
@@ -38,10 +40,8 @@ body{background-color: var(--background-night);
     display: flex;
     color: var(--color-text-night);
     transition: 0.5s;
-overflow-x: hidden;
 padding: 0;
 font-family: helvetica;
-
 p{font-size: var(--fontp);}
     
     #container-header{
@@ -129,6 +129,7 @@ ul{list-style: none;}
 //Inicio HEADER
 
 header{ // header menu hamburguer
+
 
     #menu-hamburguer{
         display: none;
@@ -341,7 +342,6 @@ header{
 //INICIO MAIN
 
 main{
-    width: 102vw;
     display: flex;
     flex-direction: column;
 
@@ -473,6 +473,7 @@ h2 > span { color: var(--colorBlue);
 
     //inicio section sobre
     #sobre{
+
         padding: 5rem 2rem;
         background-color: var(--background-sections);
         position: relative;
@@ -793,8 +794,8 @@ display: none;
         position: fixed !important;
         display: flex !important;
         transition: 0.5s;
-        height: 100dvh !important;
-        width: 100vw !important;
+        height: 100% !important;
+        width: 100% !important;
 
        
 
