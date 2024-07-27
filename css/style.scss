@@ -358,6 +358,7 @@ main{
         width: 100%;
         height: 100dvh;
         position: relative;
+     
 
         .custom-shape-divider-bottom-1718927506 {
             position: absolute;
@@ -397,7 +398,7 @@ h2 > span { color: var(--colorBlue);
         }
 
         #home-direito{  // section contem a animação 
-            margin-left: 500px;
+            margin-left: 400px;
 
             #object{width: 100px;
                 position: relative;
@@ -652,7 +653,8 @@ h2 > span { color: var(--colorBlue);
             flex-wrap: wrap;
             justify-content: center;
             gap: 20px;
-
+            width: 700px;
+            margin: auto;
             .ferramenta{
                 width: 150px;
                 height: 150px;
@@ -838,6 +840,9 @@ display: none;
                 height: 350px !important;
             }
         }
+    }
+    #container-ferramentas{
+        width: auto !important;
     }
 
 

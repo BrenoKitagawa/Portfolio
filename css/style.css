@@ -290,7 +290,7 @@ main #home #home-esquerdo h2 {
   font-size: var(--fonth2);
 }
 main #home #home-direito {
-  margin-left: 500px;
+  margin-left: 400px;
 }
 main #home #home-direito #object {
   width: 100px;
@@ -501,6 +501,8 @@ main #ferramentas #container-ferramentas {
   flex-wrap: wrap;
   justify-content: center;
   gap: 20px;
+  width: 700px;
+  margin: auto;
 }
 main #ferramentas #container-ferramentas .ferramenta {
   width: 150px;
@@ -632,5 +634,8 @@ main #ferramentas #container-ferramentas .ferramenta i {
     margin: auto !important;
     width: 350px !important;
     height: 350px !important;
+  }
+  #container-ferramentas {
+    width: auto !important;
   }
 }/*# sourceMappingURL=style.css.map */
