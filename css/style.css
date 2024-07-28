@@ -38,6 +38,7 @@ body {
 }
 body section {
   overflow: hidden;
+  min-width: 85vw;
 }
 body p {
   font-size: var(--fontp);
@@ -97,7 +98,7 @@ header #menu-hamburguer {
   z-index: 5;
   position: fixed;
   top: 20px;
-  right: 30px;
+  right: 10px;
 }
 header #menu-hamburguer .hamburger {
   cursor: pointer;
@@ -601,8 +602,7 @@ main #ferramentas #container-ferramentas .ferramenta i {
   header #container-header {
     padding: 0 !important;
     z-index: 3;
-    overflow: hidden;
-    display: none;
+    display: none !important;
   }
   header #container-header.menu-ativo {
     z-index: 4;
@@ -615,7 +615,7 @@ main #ferramentas #container-ferramentas .ferramenta i {
     width: 100% !important;
   }
   #home {
-    height: 120dvh !important;
+    height: auto !important;
     flex-direction: column;
     text-align: center;
     gap: 20px;

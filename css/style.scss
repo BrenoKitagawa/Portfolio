@@ -46,6 +46,7 @@ font-family: helvetica;
 
 section{
     overflow: hidden;
+    min-width: 85vw;
 }
 p{font-size: var(--fontp);}
     
@@ -141,7 +142,7 @@ header{ // header menu hamburguer
         z-index: 5;
         position: fixed;
         top: 20px;
-        right: 30px;
+        right: 10px;
     
         .hamburger {
       cursor: pointer;
@@ -537,7 +538,7 @@ h2 > span { color: var(--colorBlue);
         height: auto;
         padding: 5rem 1rem;
         position: relative;
-
+        
         .custom-shape-divider-top-1718928123 {
             z-index: -1;
             position: absolute;
@@ -788,9 +789,8 @@ header{
       padding: 0 !important;
 
 z-index: 3;
-overflow: hidden;
 
-display: none;
+display: none !important;
 }
 
 
@@ -804,10 +804,6 @@ display: none;
         height: 100% !important;
         width: 100% !important;
 
-       
-
-
-
     }
 
 
@@ -815,7 +811,7 @@ display: none;
 
 
     #home{
-        height: 120dvh !important;
+        height: auto !important;
         flex-direction: column;
         text-align: center;
         gap: 20px;

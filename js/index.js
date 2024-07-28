@@ -13,7 +13,6 @@ const menuSobre = document.querySelector('.ancora-sobre')
 
 const navegacao = document.querySelectorAll("a")
 
-
 const navSection = document.querySelectorAll('.section')
 
 const links = document.querySelectorAll('.nav')
