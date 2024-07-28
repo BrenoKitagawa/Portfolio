@@ -780,6 +780,10 @@ border-radius: 100% 0% 78% 22% / 31% 72% 28% 69% ;
 //mediaQuery
 @media (max-width:1200px){
 
+    section{
+        max-width: 100vw;
+    }
+
 header{
 
 

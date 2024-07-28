@@ -596,6 +596,9 @@ main #ferramentas #container-ferramentas .ferramenta i {
   }
 }
 @media (max-width: 1200px) {
+  section {
+    max-width: 100vw;
+  }
   header #menu-hamburguer {
     display: block !important;
   }
