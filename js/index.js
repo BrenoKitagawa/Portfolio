@@ -37,6 +37,8 @@ navSection.forEach(section =>{
     }
 })
 }
+
+
 navegacao.forEach(item=>{
     item.addEventListener("click", ()=>{
         if(header.classList.contains("menu-ativo")){

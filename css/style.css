@@ -15,7 +15,7 @@ html {
   --fonth2:2.5rem;
   --fontp:2rem;
   --color-text-night:#b4b1b1;
-  --background-night:rgb(27, 27, 27);
+  --background-night:#111113;
   --header-night: #0d0d0d;
   --color-text-day:#131111;
   --background-day:rgb(223, 221, 221) ;
@@ -56,6 +56,9 @@ body.day {
   color: var(--color-text-day);
   transition: 0.5s;
 }
+body.day #container-header {
+  border-right: 1px solid black;
+}
 body.day #container-header #logo a {
   color: var(--color-text-day);
 }
@@ -74,6 +77,9 @@ body.day main #home #home-direito span {
 }
 body.day main #sobre {
   background-color: whitesmoke;
+}
+body.day main #projetos .projetos a:hover img {
+  box-shadow: 4px 4px 20px 3px black !important;
 }
 body.day main #projetos .custom-shape-divider-top-1718928123 .shape-fill {
   fill: whitesmoke;
@@ -132,7 +138,7 @@ header #menu-hamburguer .hamburger input:checked + svg .line-top-bottom {
   stroke-dashoffset: -32.42;
 }
 
-header #container-header {
+header #container-header.open {
   position: sticky;
   left: 0;
   top: 0;
@@ -144,6 +150,118 @@ header #container-header {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  overflow: hidden;
+  background: rgb(26, 25, 25);
+  border-right: 1px solid rgba(255, 255, 255, 0.315);
+}
+header #container-header.open #toggleDay {
+  position: absolute;
+  top: 120px;
+}
+header #container-header.open #toggleDay .toggle-switch {
+  position: relative;
+  width: 100px;
+  height: 50px;
+  --light: #d8dbe0;
+  --dark: #28292c;
+  --link: rgb(27, 129, 112);
+  --link-hover: rgb(24, 94, 82);
+}
+header #container-header.open #toggleDay .switch-label {
+  position: absolute;
+  width: 100%;
+  height: 50px;
+  background-color: var(--dark);
+  border-radius: 25px;
+  cursor: pointer;
+  border: 3px solid var(--dark);
+}
+header #container-header.open #toggleDay .checkbox {
+  position: absolute;
+  display: none;
+}
+header #container-header.open #toggleDay .slider {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 25px;
+  transition: 0.3s;
+}
+header #container-header.open #toggleDay .checkbox:checked ~ .slider {
+  background-color: var(--light);
+}
+header #container-header.open #toggleDay .slider::before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  box-shadow: inset 12px -4px 0px 0px var(--light);
+  background-color: var(--dark);
+  transition: 0.3s;
+}
+header #container-header.open #toggleDay .checkbox:checked ~ .slider::before {
+  transform: translateX(50px);
+  background-color: var(--dark);
+  box-shadow: none;
+}
+header #container-header.open #logo {
+  font-size: 1.5rem;
+  text-align: center;
+}
+header #container-header.open #logo a {
+  color: var(--color-text-night);
+}
+header #container-header.open #nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 270px;
+}
+header #container-header.open #nav ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+header #container-header.open #nav ul:hover a:not(:hover) {
+  opacity: 0.3;
+  filter: blur(2px);
+}
+header #container-header.open #nav ul li a {
+  display: flex;
+  gap: 20px;
+  font-size: var(--fontAncora);
+  padding: 1rem;
+  position: relative;
+  transition: 0.5s;
+  font-weight: bold;
+}
+header #container-header.open #nav ul li a #icon-nav {
+  width: 20px;
+}
+header #container-header.open #nav ul li a:hover {
+  color: var(--colorBlue);
+  text-shadow: 0px 0px 10px var(--colorBlue);
+}
+header #container-header {
+  position: sticky;
+  left: 0;
+  top: 0;
+  width: 100px;
+  height: 100dvh;
+  padding: 2rem;
+  border-radius: 0px 8px 8px 0;
+  overflow: hidden;
+  background: rgb(26, 25, 25);
+  border-right: 1px solid rgba(255, 255, 255, 0.315);
+}
+header #container-header #toggleDay {
+  width: 100%;
+  text-align: center;
+  margin-top: 50px;
 }
 header #container-header #toggleDay .toggle-switch {
   position: relative;
@@ -195,7 +313,7 @@ header #container-header #toggleDay .checkbox:checked ~ .slider::before {
   box-shadow: none;
 }
 header #container-header #logo {
-  font-size: 2rem;
+  font-size: 1.5rem;
   text-align: center;
 }
 header #container-header #logo a {
@@ -204,6 +322,8 @@ header #container-header #logo a {
 header #container-header #nav {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  width: 270px;
 }
 header #container-header #nav ul {
   list-style: none;
@@ -233,12 +353,11 @@ header #container-header #nav ul li a:hover {
 }
 header #contatos {
   display: flex;
-  flex-direction: column;
   align-items: center;
   gap: 30px;
 }
 header #contatos i {
-  font-size: 3rem;
+  font-size: 1.7rem;
   transition: 0.5s;
 }
 header #contatos i:hover {
@@ -289,6 +408,8 @@ main #home #home-esquerdo h1 {
 }
 main #home #home-esquerdo h2 {
   font-size: var(--fonth2);
+  position: relative;
+  left: 50px;
 }
 main #home #home-direito {
   margin-left: 400px;
@@ -443,7 +564,6 @@ main #projetos #container-projetos .projetos {
   height: 300px;
   border-radius: 20px;
   text-align: center;
-  box-shadow: 4px 4px 15px 3px var(--colorBlue);
 }
 main #projetos #container-projetos .projetos h3 {
   font-size: 2rem;
@@ -453,7 +573,7 @@ main #projetos #container-projetos .projetos a {
   height: 200px;
 }
 main #projetos #container-projetos .projetos a:hover img {
-  box-shadow: 4px 4px 20px 3px var(--colorBlue);
+  box-shadow: 4px 4px 20px 3px white;
   transition: 0.5s;
 }
 main #projetos #container-projetos .projetos a span {
@@ -623,6 +743,13 @@ main #ferramentas #container-ferramentas .ferramenta i {
     text-align: center;
     gap: 20px;
   }
+  #home #home-esquerdo h1 {
+    font-size: 3rem !important;
+  }
+  #home #home-esquerdo h2 {
+    font-size: 1.5rem !important;
+    left: 0 !important;
+  }
   #home #home-direito {
     margin-left: -100px !important;
   }
@@ -632,6 +759,7 @@ main #ferramentas #container-ferramentas .ferramenta i {
   }
   #sobre #container-sobre #sobre-info {
     width: 100% !important;
+    text-align: center;
   }
   #sobre #container-sobre #sobre-img {
     margin: auto !important;
