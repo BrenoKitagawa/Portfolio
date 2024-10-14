@@ -21,6 +21,12 @@ const  btn_close = document.getElementById("btn-close")
 
 const headerMain=document.getElementById("header")
 
+const topo = document.getElementById("topo")
+
+topo.onclick=()=>{
+    window.scrollTo(0,0)
+}
+
 
 window.onresize=()=>{
     console.log(window.innerWidth)
