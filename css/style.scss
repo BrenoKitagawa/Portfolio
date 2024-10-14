@@ -47,6 +47,7 @@ font-family: helvetica;
 section{
     overflow: hidden;
     min-width: 85vw;
+    z-index: 2;
 }
 p{font-size: var(--fontp);}
     
@@ -54,6 +55,13 @@ p{font-size: var(--fontp);}
         background: var(--header-night);
 
         #logo a{color: var(--color-text-night) !important;}
+
+
+            #btn-close{
+        
+              
+            }
+        
     }
     
     a{
@@ -71,6 +79,13 @@ color: var(--color-text-day);
 transition: 0.5s;
 
 #container-header{
+
+    #btn-close{
+        background-color: #0d0d0d !important;
+
+        i{color: white;}
+    }
+
     border-right: 1px solid black;
     background: var(--color-text-night) !important;
 
@@ -598,6 +613,9 @@ h2 > span { color: var(--colorBlue);
                 font-size: var(--fonth2);
                 position: relative;
                     left: 50px;
+                  
+
+                    
             }
 
         }
@@ -780,11 +798,11 @@ h2 > span { color: var(--colorBlue);
           flex-wrap: wrap;
           justify-content: center;
           gap: 100px;
-
             .projetos{width: 300px;
             height: 300px;
              border-radius: 20px;
                 text-align: center;
+           
              
                 
               

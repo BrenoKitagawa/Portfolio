@@ -39,6 +39,7 @@ body {
 body section {
   overflow: hidden;
   min-width: 85vw;
+  z-index: 2;
 }
 body p {
   font-size: var(--fontp);
@@ -62,6 +63,12 @@ body.day {
 body.day #container-header {
   border-right: 1px solid black;
   background: var(--color-text-night) !important;
+}
+body.day #container-header #btn-close {
+  background-color: #0d0d0d !important;
+}
+body.day #container-header #btn-close i {
+  color: white;
 }
 body.day #container-header #logo a {
   color: var(--color-text-da) !important;
