@@ -46,6 +46,9 @@ body p {
 body #container-header {
   background: var(--header-night);
 }
+body #container-header #logo a {
+  color: var(--color-text-night) !important;
+}
 body a {
   color: var(--color-text-night);
 }
@@ -58,9 +61,10 @@ body.day {
 }
 body.day #container-header {
   border-right: 1px solid black;
+  background: var(--color-text-night) !important;
 }
 body.day #container-header #logo a {
-  color: var(--color-text-day);
+  color: var(--color-text-da) !important;
 }
 body.day a {
   color: var(--color-text-day);
@@ -138,11 +142,11 @@ header #menu-hamburguer .hamburger input:checked + svg .line-top-bottom {
   stroke-dashoffset: -32.42;
 }
 
-header #container-header.open {
+header.open #container-header {
   position: sticky;
   left: 0;
   top: 0;
-  width: 270px;
+  width: 270px !important;
   height: 100dvh;
   padding: 2rem;
   border-radius: 0px 8px 8px 0;
@@ -150,15 +154,28 @@ header #container-header.open {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  overflow: hidden;
   background: rgb(26, 25, 25);
   border-right: 1px solid rgba(255, 255, 255, 0.315);
+  transition: width 0.5s;
 }
-header #container-header.open #toggleDay {
+header.open #container-header #btn-close {
+  width: 30px;
+  height: 30px;
+  background-color: white;
+  position: absolute;
+  left: 255px;
+  top: 20px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  transform: rotate(180deg);
+  transition: 0.5s;
+}
+header.open #container-header #toggleDay {
   position: absolute;
   top: 120px;
 }
-header #container-header.open #toggleDay .toggle-switch {
+header.open #container-header #toggleDay .toggle-switch {
   position: relative;
   width: 100px;
   height: 50px;
@@ -167,7 +184,7 @@ header #container-header.open #toggleDay .toggle-switch {
   --link: rgb(27, 129, 112);
   --link-hover: rgb(24, 94, 82);
 }
-header #container-header.open #toggleDay .switch-label {
+header.open #container-header #toggleDay .switch-label {
   position: absolute;
   width: 100%;
   height: 50px;
@@ -176,21 +193,21 @@ header #container-header.open #toggleDay .switch-label {
   cursor: pointer;
   border: 3px solid var(--dark);
 }
-header #container-header.open #toggleDay .checkbox {
+header.open #container-header #toggleDay .checkbox {
   position: absolute;
   display: none;
 }
-header #container-header.open #toggleDay .slider {
+header.open #container-header #toggleDay .slider {
   position: absolute;
   width: 100%;
   height: 100%;
   border-radius: 25px;
   transition: 0.3s;
 }
-header #container-header.open #toggleDay .checkbox:checked ~ .slider {
+header.open #container-header #toggleDay .checkbox:checked ~ .slider {
   background-color: var(--light);
 }
-header #container-header.open #toggleDay .slider::before {
+header.open #container-header #toggleDay .slider::before {
   content: "";
   position: absolute;
   top: 10px;
@@ -202,35 +219,35 @@ header #container-header.open #toggleDay .slider::before {
   background-color: var(--dark);
   transition: 0.3s;
 }
-header #container-header.open #toggleDay .checkbox:checked ~ .slider::before {
+header.open #container-header #toggleDay .checkbox:checked ~ .slider::before {
   transform: translateX(50px);
   background-color: var(--dark);
   box-shadow: none;
 }
-header #container-header.open #logo {
+header.open #container-header #logo {
   font-size: 1.5rem;
   text-align: center;
 }
-header #container-header.open #logo a {
+header.open #container-header #logo a {
   color: var(--color-text-night);
 }
-header #container-header.open #nav {
+header.open #container-header #nav {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 270px;
 }
-header #container-header.open #nav ul {
+header.open #container-header #nav ul {
   list-style: none;
   display: flex;
   flex-direction: column;
   gap: 40px;
 }
-header #container-header.open #nav ul:hover a:not(:hover) {
+header.open #container-header #nav ul:hover a:not(:hover) {
   opacity: 0.3;
   filter: blur(2px);
 }
-header #container-header.open #nav ul li a {
+header.open #container-header #nav ul li a {
   display: flex;
   gap: 20px;
   font-size: var(--fontAncora);
@@ -239,128 +256,154 @@ header #container-header.open #nav ul li a {
   transition: 0.5s;
   font-weight: bold;
 }
-header #container-header.open #nav ul li a #icon-nav {
+header.open #container-header #nav ul li a #icon-nav {
   width: 20px;
 }
-header #container-header.open #nav ul li a:hover {
+header.open #container-header #nav ul li a:hover {
   color: var(--colorBlue);
   text-shadow: 0px 0px 10px var(--colorBlue);
 }
-header #container-header {
+header.open #contatos {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+header.open #contatos i {
+  font-size: 1.7rem;
+  transition: 0.5s;
+}
+header.open #contatos i:hover {
+  color: var(--colorContato);
+  text-shadow: 0px 0px 2px var(--colorContato);
+}
+
+header.close #container-header {
   position: sticky;
   left: 0;
   top: 0;
   width: 100px;
   height: 100dvh;
-  padding: 2rem;
+  padding: 1rem;
   border-radius: 0px 8px 8px 0;
-  overflow: hidden;
   background: rgb(26, 25, 25);
   border-right: 1px solid rgba(255, 255, 255, 0.315);
+  transition: 0.5s;
 }
-header #container-header #toggleDay {
-  width: 100%;
+header.close #container-header #btn-close {
+  width: 30px;
+  height: 30px;
+  background-color: white;
+  position: absolute;
+  left: 85px;
+  top: 20px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  transition: 0.5s;
+}
+header.close #container-header #btn-close i {
+  font-size: 1rem;
+}
+header.close #container-header #toggleDay {
   text-align: center;
   margin-top: 50px;
-}
-header #container-header #toggleDay .toggle-switch {
   position: relative;
-  width: 100px;
+}
+header.close #container-header #toggleDay .toggle-switch {
+  margin-left: -17px;
+  position: relative;
+  width: 50px;
   height: 50px;
   --light: #d8dbe0;
   --dark: #28292c;
   --link: rgb(27, 129, 112);
   --link-hover: rgb(24, 94, 82);
 }
-header #container-header #toggleDay .switch-label {
+header.close #container-header #toggleDay .switch-label {
   position: absolute;
   width: 100%;
   height: 50px;
   background-color: var(--dark);
   border-radius: 25px;
   cursor: pointer;
-  border: 3px solid var(--dark);
 }
-header #container-header #toggleDay .checkbox {
+header.close #container-header #toggleDay .checkbox {
   position: absolute;
   display: none;
 }
-header #container-header #toggleDay .slider {
+header.close #container-header #toggleDay .slider {
   position: absolute;
   width: 100%;
   height: 100%;
   border-radius: 25px;
   transition: 0.3s;
+  top: 0;
+  left: 0;
 }
-header #container-header #toggleDay .checkbox:checked ~ .slider {
+header.close #container-header #toggleDay .checkbox:checked ~ .slider {
   background-color: var(--light);
 }
-header #container-header #toggleDay .slider::before {
-  content: "";
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  width: 25px;
-  height: 25px;
-  border-radius: 50%;
-  box-shadow: inset 12px -4px 0px 0px var(--light);
-  background-color: var(--dark);
-  transition: 0.3s;
-}
-header #container-header #toggleDay .checkbox:checked ~ .slider::before {
-  transform: translateX(50px);
-  background-color: var(--dark);
-  box-shadow: none;
-}
-header #container-header #logo {
-  font-size: 1.5rem;
+header.close #container-header #logo {
+  font-size: 1.3rem;
   text-align: center;
 }
-header #container-header #logo a {
+header.close #container-header #logo a {
   color: var(--color-text-night);
 }
-header #container-header #nav {
+header.close #container-header #nav {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 270px;
+  width: 80px;
+  margin-top: 150px;
 }
-header #container-header #nav ul {
+header.close #container-header #nav ul {
   list-style: none;
   display: flex;
   flex-direction: column;
   gap: 40px;
 }
-header #container-header #nav ul:hover a:not(:hover) {
+header.close #container-header #nav ul:hover a:not(:hover) {
   opacity: 0.3;
   filter: blur(2px);
 }
-header #container-header #nav ul li a {
+header.close #container-header #nav ul li a {
   display: flex;
   gap: 20px;
   font-size: var(--fontAncora);
   padding: 1rem;
   position: relative;
-  transition: 0.5s;
   font-weight: bold;
 }
-header #container-header #nav ul li a #icon-nav {
+header.close #container-header #nav ul li a #icon-nav {
   width: 20px;
+  font-size: 2rem;
 }
-header #container-header #nav ul li a:hover {
+header.close #container-header #nav ul li a #info-nav {
+  width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+header.close #container-header #nav ul li a:hover {
   color: var(--colorBlue);
   text-shadow: 0px 0px 10px var(--colorBlue);
 }
-header #contatos {
+header.close #contatos {
+  width: 70%;
   display: flex;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
   gap: 30px;
+  position: absolute;
+  bottom: 20px;
 }
-header #contatos i {
+header.close #contatos i {
   font-size: 1.7rem;
   transition: 0.5s;
 }
-header #contatos i:hover {
+header.close #contatos i:hover {
   color: var(--colorContato);
   text-shadow: 0px 0px 2px var(--colorContato);
 }
@@ -715,7 +758,7 @@ main #ferramentas #container-ferramentas .ferramenta i {
     border-radius: 100% 0% 78% 22%/31% 72% 28% 69%;
   }
 }
-@media (max-width: 1200px) {
+@media (max-width: 1600px) {
   section {
     max-width: 100vw;
   }
@@ -723,7 +766,7 @@ main #ferramentas #container-ferramentas .ferramenta i {
     display: block !important;
   }
   header #container-header {
-    padding: 0 !important;
+    padding: 2rem 0 !important;
     z-index: 3;
     display: none !important;
   }

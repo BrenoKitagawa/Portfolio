@@ -17,6 +17,36 @@ const navSection = document.querySelectorAll('.section')
 
 const links = document.querySelectorAll('.nav')
 
+const  btn_close = document.getElementById("btn-close")
+
+const headerMain=document.getElementById("header")
+
+
+window.onresize=()=>{
+    console.log(window.innerWidth)
+    if(window.innerWidth < 1600){
+        headerMain.classList.remove("close")
+        headerMain.classList.add("open")
+        btn_close.style.display="none"
+        
+    }else{
+  btn_close.style.display="block"
+    }
+}
+
+
+btn_close.onclick=()=>{
+    console.log(headerMain.className)
+
+
+    if(headerMain.classList.contains("close")){
+    headerMain.classList.remove("close")
+    headerMain.classList.add("open")
+    }else{
+        headerMain.classList.add("close")
+        headerMain.classList.remove("open")
+    }
+}
 
 window.onscroll=()=>{
 navSection.forEach(section =>{
