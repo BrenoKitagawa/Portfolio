@@ -61,6 +61,7 @@ body.day {
   transition: 0.5s;
 }
 body.day #container-header {
+  border-right: 1px solid black !important;
   border-right: 1px solid black;
   background: var(--color-text-night) !important;
 }

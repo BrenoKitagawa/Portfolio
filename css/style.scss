@@ -72,14 +72,13 @@ p{font-size: var(--fontp);}
 
 
 body.day{
-
     background-color: var(--background-day);
 display: flex;
 color: var(--color-text-day);
 transition: 0.5s;
 
 #container-header{
-
+    border-right: 1px solid black !important;
     #btn-close{
         background-color: #0d0d0d !important;
 
